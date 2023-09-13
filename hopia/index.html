@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Hopia</title>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+  </head>
+
+  <body>   
+    <header>
+      <nav class="navbar navbar-dark fixed-top bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Hopia</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+              <img class="d-block" src="../assets/bootstrap-icons-1.11.0/cart-fill.svg">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                0
+                <span class="visually-hidden">number of items</span>
+              </span>
+            </button>
+            <!-- offcanvas for cart -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                ...
+              </div>
+            </div>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-5">
+      <div class="container">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gy-3">
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/choco-fudge.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Choco fudge</h5>
+                <p class="card-text">&#8369; 89.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/crinkles.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Crinkles</h5>
+                <p class="card-text">&#8369; 39.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/hopia-baboy.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Hopia baboy</h5>
+                <p class="card-text">&#8369; 65.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/hopia-de-leche.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Hopia de leche</h5>
+                <p class="card-text">&#8369; 89.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/mongox10pcs.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Hopia mongo</h5>
+                <p class="card-text">&#8369; 59.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/ube-de-leche.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Ube de leche</h5>
+                <p class="card-text">&#8369; 91.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/peanuts-cookies-cream.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Peanut cookies N cream</h5>
+                <p class="card-text">&#8369; 107.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/cheese-bulilit.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Cheese bulilit</h5>
+                <p class="card-text">&#8369; 47.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/cheesecake.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Cheese cake</h5>
+                <p class="card-text">&#8369; 81.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="max-width: 200px;">
+              <img src="img/eggpie.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Egg pie</h5>
+                <p class="card-text">&#8369; 364.00</p>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- FOOTER -->
+    <footer class="container mt-2">
+
+    </footer>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
