@@ -12,7 +12,13 @@ body {
   padding-bottom: 3rem;
 }
 
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
 .card {
+  max-width: 200px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
   transition: all .3s ease-in-out;
 }
