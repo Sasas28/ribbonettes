@@ -30,3 +30,37 @@ body {
 .card-title {
   font-size: 14px;
 }
+
+.modal-content {
+  width: auto;
+}
+
+.modal-dialog-centered {
+  justify-content: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-img-container {
+  max-width: 225px;
+}
+
+.modal-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-qty-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.table-body {
+  font-size: 12px;
+}

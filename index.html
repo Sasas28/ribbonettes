@@ -28,11 +28,65 @@
             <!-- offcanvas for cart -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
               <div class="offcanvas-header">
-                <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                <h5 id="offcanvasRightLabel">Your cart</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
-                ...
+                <table class="table table-striped align-middle">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">ITEM</th>
+                      <th scope="col">QTY</th>
+                      <th scope="col">AMOUNT</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-body">
+                    <tr>
+                      <th scope="row">
+                        <img class="rounded" src="img/choco-fudge.jpg" alt="" width="65px">
+                      </th>
+                      <td>Choco fudge</td>
+                      <td>
+                        <i class="bi bi-dash-circle-fill" style="color: red;"></i>
+                        <span>1</span>
+                        <i class="bi bi-plus-circle-fill" style="color: green;"></i>
+                      </td>
+                      <td>&#8369; 89.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <img class="rounded" src="img/crinkles.jpg" alt="" width="65px">
+                      </th>
+                      <td>Crinkles</td>
+                      <td>
+                        <i class="bi bi-dash-circle-fill" style="color: red;"></i>
+                        <span>1</span>
+                        <i class="bi bi-plus-circle-fill" style="color: green;"></i>
+                      </td>
+                      <td>&#8369; 39.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <img class="rounded" src="img/peanuts-cookies-cream.jpg" alt="" width="65px">
+                      </th>
+                      <td>Peanut cookies <br> & cream</td>
+                      <td>
+                        <i class="bi bi-dash-circle-fill" style="color: red;"></i>
+                        <span>1</span>
+                        <i class="bi bi-plus-circle-fill" style="color: green;"></i>
+                      </td>
+                      <td>&#8369; 107.00</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th colspan="3">TOTAL</th>
+                      <td>&#8369; 235.00</td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <button class="btn btn-success btn-lg w-100">CHECKOUT</button>
               </div>
             </div>
           </form>
@@ -155,11 +209,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
+            <div class="modal-img-container mb-1">
+              <img class="img-fluid" src="img/eggpie.jpg" alt="">
+            </div>
+            <div class="modal-qty-container">
+              <i class="bi bi-dash-circle-fill" style="font-size: 2rem; color: red;"></i>
+              <span>1</span>
+              <i class="bi bi-plus-circle-fill" style="font-size: 2rem; color: green;"></i>
+            </div>
+            <p class="modal-price mb-0">&#8369; 364.00</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary">Proceed</button>
           </div>
         </div>
       </div>
