@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
               <i class="bi bi-cart-fill"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 0
                 <span class="visually-hidden">number of items</span>
               </span>
@@ -41,44 +41,7 @@
                       <th scope="col">AMOUNT</th>
                     </tr>
                   </thead>
-                  <tbody class="table-body">
-                    <tr>
-                      <th scope="row">
-                        <img class="rounded" src="img/choco-fudge.jpg" alt="" width="65px">
-                      </th>
-                      <td>Choco fudge</td>
-                      <td>
-                        <i class="bi bi-dash-circle-fill" style="color: red;"></i>
-                        <span>1</span>
-                        <i class="bi bi-plus-circle-fill" style="color: green;"></i>
-                      </td>
-                      <td>&#8369; 89.00</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">
-                        <img class="rounded" src="img/crinkles.jpg" alt="" width="65px">
-                      </th>
-                      <td>Crinkles</td>
-                      <td>
-                        <i class="bi bi-dash-circle-fill" style="color: red;"></i>
-                        <span>1</span>
-                        <i class="bi bi-plus-circle-fill" style="color: green;"></i>
-                      </td>
-                      <td>&#8369; 39.00</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">
-                        <img class="rounded" src="img/peanuts-cookies-cream.jpg" alt="" width="65px">
-                      </th>
-                      <td>Peanut cookies <br> & cream</td>
-                      <td>
-                        <i class="bi bi-dash-circle-fill" style="color: red;"></i>
-                        <span>1</span>
-                        <i class="bi bi-plus-circle-fill" style="color: green;"></i>
-                      </td>
-                      <td>&#8369; 107.00</td>
-                    </tr>
-                  </tbody>
+                  <tbody class="table-body"></tbody>
                   <tfoot>
                     <tr>
                       <th colspan="3">TOTAL</th>
@@ -96,136 +59,19 @@
 
     <main class="pt-5">
       <div class="container">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gy-3">
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/choco-fudge.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Choco fudge</h5>
-                <p class="card-text">&#8369; 89.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/crinkles.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Crinkles</h5>
-                <p class="card-text">&#8369; 39.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/hopia-baboy.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Hopia baboy</h5>
-                <p class="card-text">&#8369; 65.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/hopia-de-leche.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Hopia de leche</h5>
-                <p class="card-text">&#8369; 89.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/mongox10pcs.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Hopia mongo</h5>
-                <p class="card-text">&#8369; 59.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/ube-de-leche.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Ube de leche</h5>
-                <p class="card-text">&#8369; 91.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/peanuts-cookies-cream.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Peanut cookies N cream</h5>
-                <p class="card-text">&#8369; 107.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/cheese-bulilit.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Cheese bulilit</h5>
-                <p class="card-text">&#8369; 47.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/cheesecake.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Cheese cake</h5>
-                <p class="card-text">&#8369; 81.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
-          <div class="col card-container">
-            <div class="card">
-              <img src="img/eggpie.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title mb-0">Egg pie</h5>
-                <p class="card-text">&#8369; 364.00</p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
-              </div>
-            </div>
-          </div>
+        <div id="shop" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gy-3">
         </div>
       </div>
     </main>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="modal-img-container mb-1">
-              <img class="img-fluid" src="img/eggpie.jpg" alt="">
-            </div>
-            <div class="modal-qty-container">
-              <i class="bi bi-dash-circle-fill" style="font-size: 2rem; color: red;"></i>
-              <span>1</span>
-              <i class="bi bi-plus-circle-fill" style="font-size: 2rem; color: green;"></i>
-            </div>
-            <p class="modal-price mb-0">&#8369; 364.00</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Proceed</button>
-          </div>
-        </div>
+        <div id="modal-content" class="modal-content"></div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="Data.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
