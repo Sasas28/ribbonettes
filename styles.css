@@ -72,3 +72,7 @@ button, i {
 .cart-total {
   font-weight: bold;
 }
+
+table {
+  font-size: small;
+}

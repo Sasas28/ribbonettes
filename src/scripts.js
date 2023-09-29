@@ -38,9 +38,9 @@ function openModal(productIndex) {
         <img id="modal-img" class="img-fluid" src=${product.img} alt="">
       </div>
       <div class="modal-qty-container">
-        <i onclick="decreaseQuantity()" class="bi bi-dash-circle-fill" style="font-size: 2rem; color: red;"></i>
+        <i onclick="decreaseQuantity()" class="bi bi-dash-circle-fill" style="font-size: 1rem; color: red;"></i>
         <span id="quantity" class="quantity">1</span>
-        <i onclick="increaseQuantity()" class="bi bi-plus-circle-fill" style="font-size: 2rem; color: green;"></i>
+        <i onclick="increaseQuantity()" class="bi bi-plus-circle-fill" style="font-size: 1rem; color: green;"></i>
       </div>
       <p id="modal-price" class="modal-price mb-0">&#8369;${product.price}</p>
     </div>
@@ -115,12 +115,12 @@ function renderCart() {
       </th>
       <td>${item.price}</td>
       <td>
-        <i onclick="decreaseCartItemQuantity(${item.id})" class="bi bi-dash-circle-fill" style="color: red;"></i>
+        <i onclick="decreaseCartItemQuantity(${item.id})" class="bi bi-dash-circle-fill" style="font-size: 1rem; color: red;"></i>
         <span>${item.quantity}</span>
-        <i onclick="increaseCartItemQuantity(${item.id})" class="bi bi-plus-circle-fill" style="color: green;"></i>
+        <i onclick="increaseCartItemQuantity(${item.id})" class="bi bi-plus-circle-fill" style="font-size: 1rem; color: green;"></i>
       </td>
       <td id="amount">${cleanOutput(item.amount.toFixed(2))}</td>
-      <td>
+      <td class="p-0">
         <i onclick="removeCartItem(${item.id})" class="bi bi-trash-fill" style="color: red;"></i>
       </td>
       `;
@@ -212,30 +212,14 @@ function renderProductList(searchQuery = '') {
 }
 
 function checkCartEmpty() {
-  const cartTable = document.getElementById('table');
-  const canvasBody = document.getElementById('canvasBody');
-  const cartTotalRow = document.querySelector('tfoot tr');
-
+  console.log(cart)
   if (cart.length === 0) {
-    // Cart is empty, display a message
-    cartTable.style.display = 'none'; // Hide the cart table
-    cartTotalRow.style.display = 'none'; // Hide the total row
-
-    const emptyCartMessage = document.createElement('p');
-    emptyCartMessage.textContent = 'Your cart is empty.';
-    emptyCartMessage.classList.add('text-center', 'mt-3');
-    canvasBody.appendChild(emptyCartMessage);
+    document.getElementById('message').classList.remove('d-none')
+    document.getElementById('table').style.display = "none";
   } else {
-    // Cart has items, display the table and total
-    cartTable.style.display = 'table'; // Display the cart table
-    cartTotalRow.style.display = 'table-row'; // Display the total row
-
-    // Remove the empty cart message if it exists
-    const emptyCartMessage = document.querySelector('.text-center');
-    if (emptyCartMessage) {
-      canvasBody.removeChild(emptyCartMessage);
-    }
-  }
+    document.getElementById('message').classList.add('d-none')
+    document.getElementById('table').style.display = "block";
+  } 
 }
 
 renderProductList()
