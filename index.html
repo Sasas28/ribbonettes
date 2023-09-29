@@ -18,7 +18,7 @@
           <a class="navbar-brand" href="#">Hopia</a>
           <form class="d-flex" role="search">
             <input id="product-search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <button id="cart-icon" class="btn btn-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
               <i class="bi bi-cart-fill"></i>
               <span id="cart-counter" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 0
@@ -31,25 +31,25 @@
                 <h5 id="offcanvasRightLabel">Your cart</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
-              <div class="offcanvas-body">
-                <table class="table table-striped align-middle">
+              <div id="canvasBody" class="offcanvas-body">
+                <table id="table" class="table table-striped align-middle">
                   <thead>
                     <tr>
-                      <th scope="col"></th>
                       <th scope="col">ITEM</th>
-                      <th scope="col">QTY</th>
+                      <th scope="col">PRICE</th>
+                      <th scope="col">QUANTITY</th>
                       <th scope="col">AMOUNT</th>
+                      <th scope="col"></th>
                     </tr>
                   </thead>
                   <tbody id="table-body" class="table-body"></tbody>
                   <tfoot>
                     <tr>
                       <th colspan="3">TOTAL</th>
-                      <td>&#8369; <span id="cart-total">0.00</span></td>
+                      <td>&#8369;<span id="cart-total" class="cart-total">0.00</span></td>
                     </tr>
                   </tfoot>
                 </table>
-                <button class="btn btn-success btn-lg w-100">CHECKOUT</button>
               </div>
             </div>
           </form>

@@ -1,3 +1,6 @@
+const searchInput = document.getElementById('product-search');
+const cartIcon = document.getElementById('cart-icon');
+
 let cart = [];
 let cartTotal = 0.00;
 
@@ -63,7 +66,11 @@ function decreaseQuantity() {
 
 function updateCart() {
   const quantityInput = document.getElementById('quantity');
+  const priceInput = document.getElementById('modal-price');
+
+  const price = parseInt(priceInput.textContent.slice(1));
   const quantity = parseInt(quantityInput.textContent);
+  const amount = price * quantity;
   const selectedProduct = shopItemsData.find(product => product.name === document.getElementById('exampleModalLabel').textContent);
 
   if (!isNaN(quantity) && quantity > 0) {
@@ -72,14 +79,23 @@ function updateCart() {
       if (existingCartItemIndex !== -1) {
           // If the product already exists in the cart, accumulate the quantity
           cart[existingCartItemIndex].quantity += quantity;
+          cart[existingCartItemIndex].amount += amount;
       } else {
           selectedProduct.quantity = quantity; // Set quantity
+          selectedProduct.amount = amount;
           cart.push(selectedProduct);
       }
   }
-
+  
+  countItem()
   // Update the cart display
   renderCart()
+}
+
+function countItem() {
+  const cartCounter = document.getElementById('cart-counter');
+  let countItem = cart.reduce((total, item) => total + item.quantity, 0);
+  cartCounter.textContent = countItem;
 }
 
 function renderCart() {
@@ -94,28 +110,53 @@ function renderCart() {
       const cartItem = document.createElement('tr');
       cartItem.innerHTML = `
       <th scope="row">
-        <img class="rounded" src=${item.img} alt="" width="65px">
+        <img class="rounded" src=${item.img} alt="" width="60px">
+        <p>${item.name}</p>
       </th>
-      <td>${item.name}</td>
+      <td>${item.price}</td>
       <td>
         <i onclick="decreaseCartItemQuantity(${item.id})" class="bi bi-dash-circle-fill" style="color: red;"></i>
         <span>${item.quantity}</span>
         <i onclick="increaseCartItemQuantity(${item.id})" class="bi bi-plus-circle-fill" style="color: green;"></i>
       </td>
-      <td>&#8369; ${item.price}</td>
+      <td id="amount">${cleanOutput(item.amount.toFixed(2))}</td>
+      <td>
+        <i onclick="removeCartItem(${item.id})" class="bi bi-trash-fill" style="color: red;"></i>
+      </td>
       `;
       cartItems.appendChild(cartItem);
   });
 
-  // Calculate and display the total sum
   cartTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  cartTotalElement.textContent = cartTotal.toFixed(2);
+  cartTotalElement.textContent = cleanOutput(cartTotal.toFixed(2));
+}
+
+function cleanOutput (output) {
+	let output_string = output.toString();
+	let decimal = output_string.split(".")[1];
+	output_string = output_string.split(".")[0];
+	let output_array = output_string.split("");
+	
+	if (output_array.length > 3) {
+		for (let i = output_array.length - 3; i > 0; i -= 3) {
+			output_array.splice(i, 0, ",");
+		}
+	}
+
+	if (decimal) {
+		output_array.push(".");
+		output_array.push(decimal);
+	}
+
+	return output_array.join("");
 }
 
 function increaseCartItemQuantity(itemId) {
   const item = cart.find(product => product.id === itemId);
   if (item) {
       item.quantity++;
+      item.amount += parseInt(item.price);
+      countItem()
       renderCart(); // Update the cart display
   }
 }
@@ -124,12 +165,23 @@ function decreaseCartItemQuantity(itemId) {
   const item = cart.find(product => product.id === itemId);
   if (item && item.quantity > 1) {
       item.quantity--;
+      item.amount -= parseInt(item.price);
+      countItem()
       renderCart(); // Update the cart display
   }
 }
 
+function removeCartItem(itemId) {
+  const itemIndex = cart.findIndex(product => product.id === itemId);
+  if (itemIndex !== -1) {
+      cart.splice(itemIndex, 1);
+      countItem();
+      renderCart(); 
+      checkCartEmpty();
+  }
+}
+
 function handleSearchInput() {
-  const searchInput = document.getElementById('product-search');
   const searchQuery = searchInput.value;
   renderProductList(searchQuery);
 }
@@ -159,6 +211,33 @@ function renderProductList(searchQuery = '') {
   });
 }
 
-renderProductList()
+function checkCartEmpty() {
+  const cartTable = document.getElementById('table');
+  const canvasBody = document.getElementById('canvasBody');
+  const cartTotalRow = document.querySelector('tfoot tr');
 
-document.getElementById('product-search').addEventListener('input', handleSearchInput);
+  if (cart.length === 0) {
+    // Cart is empty, display a message
+    cartTable.style.display = 'none'; // Hide the cart table
+    cartTotalRow.style.display = 'none'; // Hide the total row
+
+    const emptyCartMessage = document.createElement('p');
+    emptyCartMessage.textContent = 'Your cart is empty.';
+    emptyCartMessage.classList.add('text-center', 'mt-3');
+    canvasBody.appendChild(emptyCartMessage);
+  } else {
+    // Cart has items, display the table and total
+    cartTable.style.display = 'table'; // Display the cart table
+    cartTotalRow.style.display = 'table-row'; // Display the total row
+
+    // Remove the empty cart message if it exists
+    const emptyCartMessage = document.querySelector('.text-center');
+    if (emptyCartMessage) {
+      canvasBody.removeChild(emptyCartMessage);
+    }
+  }
+}
+
+renderProductList()
+cartIcon.addEventListener('click', checkCartEmpty)
+searchInput.addEventListener('input', handleSearchInput);

@@ -12,6 +12,14 @@ body {
   padding-bottom: 3rem;
 }
 
+button, i {
+  cursor: pointer;
+}
+
+.to-left {
+  text-align: left;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -61,6 +69,6 @@ body {
   align-items: center;
 }
 
-.table-body {
-  font-size: 12px;
+.cart-total {
+  font-weight: bold;
 }
